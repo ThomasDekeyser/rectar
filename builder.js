@@ -97,7 +97,7 @@ if (!window.console.log) window.console.log = function () { };
 		"soort":"andere",
 		"titel":"",
 		"ingred":"",
-		"personen":"",
+		"personen":"4",
 		"tijd":"",
 		"diff":"40",
 		"uitgeprobeerd":"nee",
