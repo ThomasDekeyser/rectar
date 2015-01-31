@@ -177,7 +177,9 @@ if (!window.console.log) window.console.log = function () { };
 		self.selectedRecept = ko.observable();
 		self.lastError = ko.observable();
 		self.lastSuccess = ko.observable();
-		
+		self.pageTitle = ko.computed(function() {
+			  return "Recepten Frida Vandewynckel" + (self.selectedRecept() ? " - "+ self.selectedRecept().titel() : "");
+		},self);
 		self.categorieButtons = ko.observableArray(initialCategorieButtons);
 		self.tempButtons = ko.observableArray(initialTempButtons);
 		self.soortButtons = ko.observableArray(initialSoortButtons);
@@ -328,6 +330,6 @@ if (!window.console.log) window.console.log = function () { };
 	
 	
 	var vm = new myViewModel();	
-	ko.applyBindings(vm);		
+	ko.applyBindings(vm, document.getElementsByTagName('html')[0])
 
 })(ko, jQuery);
